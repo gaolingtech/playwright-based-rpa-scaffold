@@ -1,0 +1,26 @@
+{
+  "name": "playwright-based-rpa-scaffold-app",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "./dist/main/main.js",
+  "scripts": {
+    "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.ts",
+    "postinstall": "npm run rebuild && npm run link-modules",
+    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+  },
+  "dependencies": {
+    "@playwright/browser-chromium": "^1.42.1",
+    "async-lock": "^1.4.1",
+    "ghost-cursor-playwright": "^2.1.0",
+    "node-cache": "^5.1.2",
+    "node-schedule": "^2.1.1",
+    "playwright": "^1.42.1",
+    "playwright-extra": "^4.3.6",
+    "sqlite3": "^5.1.6"
+  },
+  "overrides": {
+    "sqlite3": {
+      "node-gyp": "^10.0.1"
+    }
+  }
+}
