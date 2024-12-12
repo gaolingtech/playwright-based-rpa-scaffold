@@ -6,7 +6,7 @@ export function createBridgeInterface<Utilities extends Record<string, Function>
   builder: () => Utilities
 ): {
     mainBindings(ipcMain: Electron.IpcMain): void,
-    preloadBindings(ipcRenderer: Electron.IpcRenderer): { [key: BridgeName]: Utilities }
+    preloadBindings(ipcRenderer: Electron.IpcRenderer): Record<BridgeName, Utilities>
   } {
   const utilities = builder()
 
