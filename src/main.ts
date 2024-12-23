@@ -1,6 +1,6 @@
 import { app, ipcMain } from 'electron'
 import { createMainWindow, mainWindow } from './windows/MainWindow/main'
-import { GreetingBridge } from './bridge/greeting'
+import { GreetingBridgeMainBinding } from './bridge/greeting/main'
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support')
@@ -19,7 +19,7 @@ process.on('SIGINT', () => {
 })
 
 function registryIpcMainBindings() {
-  GreetingBridge.mainBindings(ipcMain)
+  GreetingBridgeMainBinding(ipcMain)
 }
 
 app.on('window-all-closed', () => {

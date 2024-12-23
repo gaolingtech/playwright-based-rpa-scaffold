@@ -1,12 +1,12 @@
 /* eslint no-unused-vars: off */
 import * as electron from 'electron'
 import { contextBridge } from 'electron'
-import { GreetingBridge } from './bridge/greeting'
+import { GreetingBridgePreloadBinding } from './bridge/greeting/preload'
 
 const API = {
   ping: 'pong',
   username: process.env.USER,
-  ...GreetingBridge.preloadBindings(electron.ipcRenderer)
+  ...GreetingBridgePreloadBinding(electron.ipcRenderer)
 }
 
 contextBridge.exposeInMainWorld('electron', API)

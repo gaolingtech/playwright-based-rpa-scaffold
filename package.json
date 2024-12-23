@@ -71,6 +71,7 @@
     "@types/archiver": "^6.0.2",
     "@types/async-lock": "^1.4.2",
     "@types/jest": "^29.5.5",
+    "@types/lodash": "^4.17.13",
     "@types/node": "20.6.2",
     "@types/node-schedule": "^2.1.6",
     "@types/react": "^18.2.21",
